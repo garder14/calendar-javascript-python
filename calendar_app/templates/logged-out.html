@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendar</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='logged-out.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    </head>
+
+    <body>
+        <div class="main-container">
+            <p class="title"><i class="fas fa-calendar-day"></i> &nbsp; Calendar App</p>
+            <div class="auth-form">
+                <div class="email-input-wrapper">
+                    <input type="text" class="email-input" placeholder="Email" role="presentation">
+                    <div class="email-button"><i class="fas fa-arrow-right"></i></div>
+                </div>
+                <div class="email-copy-wrapper">
+                    <div class="back-button display-none"><i class="fas fa-arrow-left"></i></div>
+                    <p class="email-copy-text display-none"></p> 
+                </div>
+                <p class="operation-type-text display-none"></p> 
+                <div class="password-input-wrapper">
+                    <input type="password" class="password-input display-none" placeholder="Password" role="presentation">
+                    <div class="password-button display-none"><i class="fas fa-arrow-right"></i></div>
+                </div>
+                <ul class="error-messages display-none"></ul>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='logged-out.js') }}"></script>
+    </body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendar</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='logged-in.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    </head>
+    
+    <body>
+        <div class="loading-container">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        
+        <div class="main-container display-none">
+            <div class="main-container-sub1">
+                <div class="user-info">
+                    <p>User: &nbsp;<span class="current-user-email"></span></p>
+                    <p class="logout-button">Log out</p>
+                </div>
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <i class="fas fa-caret-left prev-month"></i>
+                        <p class="today-month"></p>
+                        <i class="fas fa-caret-right next-month"></i>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <p>Mon</p>
+                        <p>Tue</p>
+                        <p>Wed</p>
+                        <p>Thu</p>
+                        <p>Fri</p>
+                        <p>Sat</p>
+                        <p>Sun</p>
+                    </div>
+                    <div class="calendar-days"></div>
+                </div>
+            </div>
+            <div class="main-container-sub2">
+                <div class="events">
+                    <div class="events-header">
+                        <p></p>
+                        <i class="fas fa-plus add-event"></i>
+                    </div>
+                    <div class="events-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="event-container display-none">
+            <div class="event-form">
+                <div class="event-form-header">
+                    <div class="delete-popup display-none">
+                        <p>Are you sure?</p>
+                        <div class="no-delete-button">No</div>
+                        <div class="yes-delete-button">Delete</div>
+                    </div>
+                    <div class="delete-button"><i class="fas fa-trash"></i></div>
+                </div>
+                <div class="event-form-body">
+                    <ul class="error-messages display-none"></ul>
+                    <label class="date-label">Date</label>
+                    <label class="time-label">Time</label>
+                    <input type="tel" class="day-input" placeholder="dd" maxlength="2">
+                    <p class="dash1">-</p>
+                    <input type="tel" class="month-input" placeholder="mm" maxlength="2">
+                    <p class="dash2">-</p>
+                    <input type="tel" class="year-input" placeholder="yyyy" maxlength="4">
+                    <input type="tel" class="hours-input" placeholder="hh" maxlength="2">
+                    <p class="colon">:</p>
+                    <input type="tel" class="minutes-input" placeholder="mm" maxlength="2">
+                    <label class="description-label">Description</label>
+                    <textarea class="description-input" rows=2></textarea>
+                    <label class="color-label">Category</label>
+                    <div class="color-input">
+                        <label>
+                            <input type="radio" name="color" value="#477aa5" checked>
+                            <div class="color-option" style="background-color:#477aa5"></div>
+                        </label>
+                        <label>
+                            <input type="radio" name="color" value="#a5997e">
+                            <div class="color-option" style="background-color:#a5997e"></div>
+                        </label>
+                        <label>
+                            <input type="radio" name="color" value="#e56b6f">
+                            <div class="color-option" style="background-color:#e56b6f"></div>
+                        </label>
+                        <label>
+                            <input type="radio" name="color" value="#74af74">
+                            <div class="color-option" style="background-color:#74af74"></div>
+                        </label>
+                    </div>
+                    <div class="cancel-button">Cancel</div>
+                    <div class="accept-button">Save</div>
+                </div>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='logged-in.js') }}"></script>
+    </body>
+
+</html>
